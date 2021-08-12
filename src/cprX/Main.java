@@ -7,6 +7,8 @@ public class Main {
 	public static void main(String[] args) {
 		
 		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Ingrese el número de productos");
 		int num_productos = Integer.parseInt(input.nextLine());
 
 		int[] codigos = new int[num_productos];
