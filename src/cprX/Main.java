@@ -25,16 +25,23 @@ public class Main {
 			}
 		}
 		
-		Producto menor = null;
-		int cant_menor = 1000000000;
+		Producto mayor = null;
+		int cant_mayor = 0;
 		for(int j = 0; j < productos.length; j++) {
-			if(productos[j].getCant_bodega() < cant_menor) {
-				cant_menor = productos[j].getCant_bodega();
-				menor = productos[j];
+			if(productos[j].getCant_bodega() > cant_mayor) {
+				cant_mayor = productos[j].getCant_bodega();
+				mayor = productos[j];
 			}
 		}
-		System.out.println("El producto menor es: "+menor.getCodigo());
+		System.out.println("El producto mayor es: "+mayor.getCodigo());
 		
+		System.out.println("Ingrese los datos de la compra (Código producto, cantidad)");
+		String[] data_compra = input.nextLine().split(" ");
+		for(int j = 0; j < productos.length; j++) {
+			if(productos[j].getCodigo() == Integer.parseInt(data_compra[0])) {
+				System.out.println("El total de la compra es: "+productos[j].totalizarPago(Integer.parseInt(data_compra[1])));
+			}
+		}
 			
 		
 		input.close();
