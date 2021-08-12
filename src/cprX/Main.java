@@ -5,35 +5,38 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-
-		int[] codigos = new int[7];
-		int[] cant_bodega = new int[7];
-		int[] cant_minima = new int[7];
 		
 		Scanner input = new Scanner(System.in);
+		int num_productos = Integer.parseInt(input.nextLine());
+
+		int[] codigos = new int[num_productos];
+		int[] cant_bodega = new int[num_productos];
+		int[] cant_minima = new int[num_productos];
+		
+		
 		
 		int max_cant = 0;
 		int min_cant = 1000000000;
 		int max_pos = 0;
 		int min_pos = 0;
 		
-		for(int i = 0; i<7; i++) {
+		for(int i = 0; i<num_productos; i++) {
 			System.out.println("Ingrese el valor del codigo");
 			codigos[i] = input.nextInt();
 		}
 		
-		for(int i = 0; i<7; i++) {
+		for(int i = 0; i<num_productos; i++) {
 			System.out.println("Ingrese el valor de la cantidad de la bodega");
 			cant_bodega[i] = input.nextInt();
 		}
 		
-		for(int i = 0; i<7; i++) {
+		for(int i = 0; i<num_productos; i++) {
 			System.out.println("Ingrese el valor de la cantidad minima");
 			cant_minima[i] = input.nextInt();
 		}
 		
 		System.out.println("Códigos de productos que son necesario pedir");
-		for(int i = 0; i<7; i++) {			
+		for(int i = 0; i<num_productos; i++) {			
 			if(cant_bodega[i] < cant_minima[i]) {
 				System.out.println(codigos[i]); 
 			}
