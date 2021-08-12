@@ -42,7 +42,18 @@ public class Main {
 				System.out.println("El total de la compra es: "+productos[j].totalizarPago(Integer.parseInt(data_compra[1])));
 			}
 		}
-			
+		
+		//Cambiar cantidad minima requerida
+		System.out.println("Ingrese el código del producto a actualizar");
+		int cod_producto = Integer.parseInt(input.nextLine());	
+		System.out.println("Ingrese la nueva cantidad mínima del producto");
+		int nueva_cant_minima = Integer.parseInt(input.nextLine());
+		for(int k = 0; k < productos.length; k++) {
+			if(productos[k].getCodigo() == cod_producto) {
+				productos[k].setCant_minima_req(nueva_cant_minima);
+				System.out.println("La nueva cantidad mínima del producto es: "+productos[k].getCant_minima_req());
+			}
+		}
 		
 		input.close();
 	}

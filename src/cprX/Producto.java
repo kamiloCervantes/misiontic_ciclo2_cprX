@@ -48,7 +48,13 @@ public class Producto {
 	}
 
 	public void setCant_minima_req(int cant_minima_req) {
-		this.cant_minima_req = cant_minima_req;
+		if(cant_minima_req >= 0) {
+			this.cant_minima_req = cant_minima_req;
+		}
+		else {
+			this.cant_minima_req = 0;
+		}
+		
 	}
 	
 	public int getCant_maxima() {
