@@ -9,13 +9,13 @@ public class Producto {
 	private int cant_maxima;
 	private float descuento;
 	
-	public Producto(int codigo, int precio_compra, int cant_bodega, int cant_minima_req) {
+	public Producto(int codigo, int precio_compra, int cant_bodega, int cant_minima_req, int cant_maxima) {
 		super();
 		this.codigo = codigo;
 		this.precio_compra = precio_compra;
 		this.cant_bodega = cant_bodega;
 		this.cant_minima_req = cant_minima_req;
-		this.cant_maxima = 0;
+		this.cant_maxima = cant_maxima;
 		this.descuento = 1.0f;
 	}
 

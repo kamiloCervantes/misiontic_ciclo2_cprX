@@ -13,9 +13,9 @@ public class Main {
 		Producto[] productos = new Producto[num_productos];
 		
 		for(int i = 0; i < num_productos; i++) {
-			System.out.println("Ingrese los datos del producto (Código, precio, cantidad bodega, cantidad mínima)");
+			System.out.println("Ingrese los datos del producto (Código, precio, cantidad bodega, cantidad mínima, cantidad máxima)");
 			String[] data_producto = input.nextLine().split(" ");			
-			Producto p = new Producto(Integer.parseInt(data_producto[0]), Integer.parseInt(data_producto[1]), Integer.parseInt(data_producto[2]), Integer.parseInt(data_producto[3]));
+			Producto p = new Producto(Integer.parseInt(data_producto[0]), Integer.parseInt(data_producto[1]), Integer.parseInt(data_producto[2]), Integer.parseInt(data_producto[3]), Integer.parseInt(data_producto[4]));
 			productos[i] = p;
 		}
 		
