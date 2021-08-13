@@ -1,6 +1,6 @@
 package cprX;
 
-public class Producto {
+public abstract class Producto {
 	
 	private int codigo;
 	private String descripcion;
@@ -93,17 +93,11 @@ public class Producto {
 		this.descuento = descuento;
 	}
 
-	public boolean solicitarPedido() {
-		return this.cant_bodega < this.cant_minima_req;
-	}
+	public abstract boolean solicitarPedido();
 	
-	public float totalizarPago(int unidades) {
-		return (unidades*this.precio_venta)*((100-this.descuento)/100);
-	}
+	public abstract float totalizarPago(int unidades);
 	
-	public float totalizarPagoSinDescuento(int unidades) {
-		return (unidades*this.precio_venta);
-	}
+	public abstract float totalizarPagoSinDescuento(int unidades);
 	
 	public void venderProducto(int unidades) {
 		if(this.cant_bodega >= unidades) {
@@ -111,9 +105,7 @@ public class Producto {
 		}
 	}
 	
-	public void mostrar() {
-		System.out.println(this.codigo+"-"+this.descripcion+"-"+this.precio_compra+"-"+this.precio_venta+"-"+this.cant_minima_req+"-"+this.cant_bodega+"-"+this.cant_maxima);
-	}
+	public abstract void mostrar();
 	
 	
 	
