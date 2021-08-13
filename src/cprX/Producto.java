@@ -111,6 +111,10 @@ public class Producto {
 		}
 	}
 	
+	public void mostrar() {
+		System.out.println(this.codigo+"-"+this.descripcion+"-"+this.precio_compra+"-"+this.precio_venta+"-"+this.cant_minima_req+"-"+this.cant_bodega+"-"+this.cant_maxima);
+	}
+	
 	
 	
 	

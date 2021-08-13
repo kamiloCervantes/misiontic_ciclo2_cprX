@@ -26,4 +26,8 @@ public class Ropa extends Producto{
 	public void setPlanchable(boolean planchable) {
 		this.planchable = planchable;
 	}
+	
+	public void mostrar() {
+		System.out.println(this.getCodigo()+"-"+this.getDescripcion()+"-"+this.getPrecio_compra()+"-"+this.getPrecio_venta()+"-"+this.getCant_minima_req()+"-"+this.getCant_bodega()+"-"+this.getCant_maxima()+"-"+this.talla+"-"+(this.planchable ? "Planchable" : "No planchable"));
+	}
 }
