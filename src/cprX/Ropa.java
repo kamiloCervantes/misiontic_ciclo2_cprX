@@ -1,6 +1,6 @@
 package cprX;
 
-public class Ropa extends Producto{
+public class Ropa extends Producto implements Vista{
 	
 	private String talla;
 	
@@ -41,5 +41,17 @@ public class Ropa extends Producto{
 	
 	public float totalizarPagoSinDescuento(int unidades) {
 		return (unidades*this.getPrecio_venta());
+	}
+	
+	public void mostrar1() {
+		this.mostrar();
+	}
+	
+	public void mostrar2() {
+		System.out.println(this.getCodigo()+"-"+this.getDescripcion());
+	}
+	
+	public void mostrar3() {
+		System.out.println(this.getCodigo()+"-"+this.getDescripcion()+"-"+this.getPrecio_compra()+"-"+this.getPrecio_venta());
 	}
 }
