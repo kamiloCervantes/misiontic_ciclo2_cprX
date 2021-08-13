@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="323.0" prefWidth="452.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cpr13.LoginController">
+<AnchorPane prefHeight="323.0" prefWidth="452.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cprX.LoginController">
    <children>
       <Button fx:id="login_btn" layoutX="174.0" layoutY="266.0" mnemonicParsing="false" onAction="#login" text="Iniciar sesion" />
       <Label layoutX="76.0" layoutY="60.0" text="Almacén El Agáchate">
@@ -18,16 +18,12 @@
       </Label>
       <ImageView fitHeight="69.0" fitWidth="62.0" layoutX="195.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@low-price.png" />
+            <Image url="@../../low-price.png" />
          </image>
       </ImageView>
       <Label layoutX="76.0" layoutY="127.0" text="Usuario" />
       <Label layoutX="76.0" layoutY="181.0" text="Clave" />
       <TextField fx:id="user" layoutX="76.0" layoutY="143.0" prefHeight="24.0" prefWidth="307.0" />
       <TextField fx:id="pwd" layoutX="76.0" layoutY="197.0" prefHeight="24.0" prefWidth="307.0" />
-      <Label fx:id="mensajeError" layoutX="77.0" layoutY="235.0" textFill="#ee0707">
-         <font>
-            <Font size="9.0" />
-         </font></Label>
    </children>
 </AnchorPane>
