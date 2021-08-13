@@ -3,6 +3,7 @@ package cprX;
 public class Producto {
 	
 	private int codigo;
+	private String descripcion;
 	private int precio_compra;
 	private int precio_venta;
 	private int cant_bodega;
@@ -10,9 +11,10 @@ public class Producto {
 	private int cant_maxima;
 	private float descuento;
 	
-	public Producto(int codigo, int precio_compra, int precio_venta, int cant_bodega, int cant_minima_req, int cant_maxima) {
+	public Producto(int codigo, String descripcion, int precio_compra, int precio_venta, int cant_bodega, int cant_minima_req, int cant_maxima) {
 		super();
 		this.codigo = codigo;
+		this.descripcion = descripcion;
 		this.precio_compra = precio_compra;
 		this.precio_venta = precio_venta;
 		this.cant_bodega = cant_bodega;
@@ -27,6 +29,14 @@ public class Producto {
 
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 
 	public int getPrecio_compra() {
