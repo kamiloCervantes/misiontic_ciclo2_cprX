@@ -15,16 +15,18 @@ public class Main {
 		for(int i = 0; i < num_productos; i++) {
 			System.out.println("Ingrese los datos del producto (Código, precio, cantidad bodega, cantidad mínima, cantidad máxima)");
 			String[] data_producto = input.nextLine().split(" ");			
-			Producto p = new Producto(Integer.parseInt(data_producto[0]), Integer.parseInt(data_producto[1]), Integer.parseInt(data_producto[2]), Integer.parseInt(data_producto[3]), Integer.parseInt(data_producto[4]));
+			Producto p = new Producto(Integer.parseInt(data_producto[0]), Integer.parseInt(data_producto[1]), Integer.parseInt(data_producto[2]), Integer.parseInt(data_producto[3]), Integer.parseInt(data_producto[4]), Integer.parseInt(data_producto[5]));
 			productos[i] = p;
 		}
 		
+		//alerta solicitudes de pedidos
 		for(int j = 0; j < productos.length; j++) {
 			if(productos[j].solicitarPedido()) {
 				System.out.println("Alerta! Se debe solicitar pedido al producto "+ productos[j].getCodigo());
 			}
 		}
 		
+		//producto mayor
 		Producto mayor = null;
 		int cant_mayor = 0;
 		for(int j = 0; j < productos.length; j++) {
@@ -35,6 +37,7 @@ public class Main {
 		}
 		System.out.println("El producto mayor es: "+mayor.getCodigo());
 		
+		//realizar compra
 		System.out.println("Ingrese los datos de la compra (Código producto, cantidad)");
 		String[] data_compra = input.nextLine().split(" ");
 		for(int j = 0; j < productos.length; j++) {

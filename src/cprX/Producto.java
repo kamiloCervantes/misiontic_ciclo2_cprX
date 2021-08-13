@@ -4,15 +4,17 @@ public class Producto {
 	
 	private int codigo;
 	private int precio_compra;
+	private int precio_venta;
 	private int cant_bodega;
 	private int cant_minima_req;
 	private int cant_maxima;
 	private float descuento;
 	
-	public Producto(int codigo, int precio_compra, int cant_bodega, int cant_minima_req, int cant_maxima) {
+	public Producto(int codigo, int precio_compra, int precio_venta, int cant_bodega, int cant_minima_req, int cant_maxima) {
 		super();
 		this.codigo = codigo;
 		this.precio_compra = precio_compra;
+		this.precio_venta = precio_venta;
 		this.cant_bodega = cant_bodega;
 		this.cant_minima_req = cant_minima_req;
 		this.cant_maxima = cant_maxima;
@@ -33,6 +35,14 @@ public class Producto {
 
 	public void setPrecio_compra(int precio_compra) {
 		this.precio_compra = precio_compra;
+	}
+
+	public int getPrecio_venta() {
+		return precio_venta;
+	}
+
+	public void setPrecio_venta(int precio_venta) {
+		this.precio_venta = precio_venta;
 	}
 
 	public int getCant_bodega() {
@@ -78,7 +88,7 @@ public class Producto {
 	}
 	
 	public float totalizarPago(int unidades) {
-		return (unidades*this.precio_compra)*((100-this.descuento)/100);
+		return (unidades*this.precio_venta)*((100-this.descuento)/100);
 	}
 	
 	
