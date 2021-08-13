@@ -17,14 +17,16 @@ public class Main {
 			String[] data_producto = input.nextLine().split(" ");			
 			Producto p = new Producto(Integer.parseInt(data_producto[0]), Integer.parseInt(data_producto[1]), Integer.parseInt(data_producto[2]), Integer.parseInt(data_producto[3]), Integer.parseInt(data_producto[4]));
 			productos[i] = p;
-		}
+		}	
 		
+		//verificar productos a pedir
 		for(int j = 0; j < productos.length; j++) {
 			if(productos[j].solicitarPedido()) {
 				System.out.println("Alerta! Se debe solicitar pedido al producto "+ productos[j].getCodigo());
 			}
-		}
+		}	
 		
+		//producto con mayor cantidad en bodega
 		Producto mayor = null;
 		int cant_mayor = 0;
 		for(int j = 0; j < productos.length; j++) {
@@ -35,10 +37,12 @@ public class Main {
 		}
 		System.out.println("El producto mayor es: "+mayor.getCodigo());
 		
+		//total a pagar
 		System.out.println("Ingrese los datos de la compra (Código producto, cantidad)");
 		String[] data_compra = input.nextLine().split(" ");
+		int cod_producto_compra = Integer.parseInt(data_compra[0]);
 		for(int j = 0; j < productos.length; j++) {
-			if(productos[j].getCodigo() == Integer.parseInt(data_compra[0])) {
+			if(productos[j].getCodigo() == cod_producto_compra) {
 				System.out.println("El total de la compra es: "+productos[j].totalizarPago(Integer.parseInt(data_compra[1])));
 			}
 		}
@@ -55,6 +59,26 @@ public class Main {
 			}
 		}
 		
+		//vender producto
+		System.out.println("Ingrese los datos de la venta (Código producto, cantidad)");
+		String[] data_venta = input.nextLine().split(" ");
+		int cod_producto_venta = Integer.parseInt(data_venta[0]);
+		int cantidad_venta = Integer.parseInt(data_venta[1]);
+		for(int h = 0; h < productos.length; h++) {
+			if(productos[h].getCodigo() == cod_producto_venta) {
+				if(productos[h].getCant_bodega() >= cantidad_venta) {
+					double valor_factura_con_descuento = productos[h].totalizarPago(cantidad_venta);
+					double valor_factura_sin_descuento = productos[h].totalizarPagoSinDescuento(cantidad_venta);
+					productos[h].setCant_bodega(productos[h].getCant_bodega() - cantidad_venta);
+					System.out.println("El valor de la venta con descuento es: "+valor_factura_con_descuento);
+					System.out.println("El valor de la venta sin descuento es: "+valor_factura_sin_descuento);
+					System.out.println("El nuevo valor de cantidad de productos en bodega es: "+productos[h].getCant_bodega());
+				}
+				else {
+					System.out.println("No hay suficiente producto en bodega");
+				}				
+			}
+		}
 		input.close();
 	}
 

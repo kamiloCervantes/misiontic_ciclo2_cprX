@@ -81,6 +81,16 @@ public class Producto {
 		return (unidades*this.precio_compra)*((100-this.descuento)/100);
 	}
 	
+	public float totalizarPagoSinDescuento(int unidades) {
+		return (unidades*this.precio_compra);
+	}
+	
+	public void venderProducto(int unidades) {
+		if(this.cant_bodega >= unidades) {
+			this.setCant_bodega(this.cant_bodega-unidades);
+		}
+	}
+	
 	
 	
 	
