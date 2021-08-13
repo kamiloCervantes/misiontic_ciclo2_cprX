@@ -21,4 +21,16 @@ public class Calzado extends Producto{
 	public void mostrar() {
 		System.out.println(this.getCodigo()+"-"+this.getDescripcion()+"-"+this.getPrecio_compra()+"-"+this.getPrecio_venta()+"-"+this.getCant_minima_req()+"-"+this.getCant_bodega()+"-"+this.getCant_maxima()+"-"+this.talla);
 	}
+	
+	public boolean solicitarPedido() {
+		return this.getCant_bodega() < this.getCant_minima_req();
+	}
+	
+	public float totalizarPago(int unidades) {
+		return (unidades*this.getPrecio_venta())*((100-this.getDescuento())/100);
+	}
+	
+	public float totalizarPagoSinDescuento(int unidades) {
+		return (unidades*this.getPrecio_venta());
+	}
 }
