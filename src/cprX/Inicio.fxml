@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="323.0" prefWidth="452.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cprX.InicioController">
+   <children>
+      <Label layoutX="76.0" layoutY="60.0" text="Almacén El Agáchate">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="69.0" fitWidth="62.0" layoutX="195.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../low-price.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="103.0" layoutY="112.0" text="Bienvenido(a) a Almacén El Agachate" />
+   </children>
+</AnchorPane>
