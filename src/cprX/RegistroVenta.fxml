@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="418.0" prefWidth="452.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cprX.InicioController">
+<AnchorPane prefHeight="418.0" prefWidth="452.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cprX.RegistroVentaController">
    <children>
       <Label layoutX="76.0" layoutY="60.0" text="Almacén El Agáchate">
          <font>
@@ -34,10 +34,10 @@
                         <Label layoutX="26.0" layoutY="61.0" text="Producto:" />
                         <Label layoutX="24.0" layoutY="107.0" text="Cliente:" />
                         <Label layoutX="24.0" layoutY="152.0" text="Cantidad:" />
-                        <ChoiceBox layoutX="124.0" layoutY="57.0" prefHeight="24.0" prefWidth="293.0" />
-                        <ChoiceBox layoutX="124.0" layoutY="103.0" prefHeight="24.0" prefWidth="293.0" />
-                        <TextField layoutX="316.0" layoutY="148.0" prefHeight="24.0" prefWidth="101.0" />
-                        <Button layoutX="124.0" layoutY="194.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="211.0" text="Registrar" />
+                        <ChoiceBox fx:id="sel_productos" layoutX="124.0" layoutY="57.0" prefHeight="24.0" prefWidth="293.0" />
+                        <ChoiceBox fx:id="sel_clientes" layoutX="124.0" layoutY="103.0" prefHeight="24.0" prefWidth="293.0" />
+                        <TextField fx:id="cantidad_venta" layoutX="316.0" layoutY="148.0" prefHeight="24.0" prefWidth="101.0" />
+                        <Button fx:id="btn_registrar" layoutX="124.0" layoutY="194.0" mnemonicParsing="false" onAction="#registrarVenta" prefHeight="48.0" prefWidth="211.0" text="Registrar" />
                      </children>
                   </AnchorPane>
             </content>
@@ -46,16 +46,16 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Button layoutX="112.0" layoutY="198.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="211.0" text="Añadir cliente" />
+                        <Button fx:id="crearCliente" layoutX="112.0" layoutY="198.0" mnemonicParsing="false" onAction="#registrarCliente" prefHeight="48.0" prefWidth="211.0" text="Añadir cliente" />
                         <Label layoutX="14.0" layoutY="14.0" text="Creacion de clientes" />
                         <Label layoutX="45.0" layoutY="48.0" text="Identificacion (C.C.):" />
                         <Label layoutX="45.0" layoutY="84.0" text="Nombre:" />
                         <Label layoutX="45.0" layoutY="120.0" text="Apellido:" />
                         <Label layoutX="45.0" layoutY="158.0" text="Genero (F/M):" />
-                        <TextField layoutX="206.0" layoutY="44.0" prefHeight="24.0" prefWidth="207.0" />
-                        <TextField layoutX="206.0" layoutY="80.0" prefHeight="24.0" prefWidth="206.0" />
-                        <TextField layoutX="206.0" layoutY="116.0" prefHeight="24.0" prefWidth="206.0" />
-                        <TextField layoutX="206.0" layoutY="154.0" prefHeight="24.0" prefWidth="205.0" />
+                        <TextField fx:id="identificacion_cliente" layoutX="206.0" layoutY="44.0" prefHeight="24.0" prefWidth="207.0" />
+                        <TextField fx:id="nombre_cliente" layoutX="206.0" layoutY="80.0" prefHeight="24.0" prefWidth="206.0" />
+                        <TextField fx:id="apellido_cliente" layoutX="206.0" layoutY="116.0" prefHeight="24.0" prefWidth="206.0" />
+                        <TextField fx:id="genero_cliente" layoutX="206.0" layoutY="154.0" prefHeight="24.0" prefWidth="205.0" />
                      </children>
                   </AnchorPane>
             </content>

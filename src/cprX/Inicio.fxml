@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -19,5 +20,6 @@
          </image>
       </ImageView>
       <Label layoutX="103.0" layoutY="100.0" text="Bienvenido(a) a Almacén El Agachate" />
+      <Button fx:id="createSaleButton" layoutX="124.0" layoutY="247.0" mnemonicParsing="false" onAction="#createSale" prefHeight="44.0" prefWidth="225.0" text="Registrar venta" />
    </children>
 </AnchorPane>
