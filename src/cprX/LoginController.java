@@ -60,6 +60,7 @@ public class LoginController {
 				stmt.setString(2, password);
 				ResultSet result = stmt.executeQuery();
 				int res = result.getInt(1);
+				conn.close();
 				
 				if(res > 0) {
 					FXMLLoader loader = new FXMLLoader(LoginController.class.getResource("Inicio.fxml")); 
